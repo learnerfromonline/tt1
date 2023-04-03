@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabed interface</title>
+    <style>
+     body{
+        padding: 100px 0;
+        background: #ccc;
+        color: black;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: larger;
+        margin:0;
+     }
+     #tabs{
+        width:400px;
+        margin:auto;
+     }
+     #tabs > ul{
+        display:flex;
+        list-style-type:none;
+            
+     }
+     #tabs > ul > li > a{
+        display: block;
+        height:60px;
+        line-height: 20px;
+        margin-right:3px;
+        margin-bottom: -15px;
+        background:#a2a2a2;
+        border-radius: 40px 0px 80px;
+        text-align: center;
+        font-size:20px;
+        float:left;
+        position:initial;
+        text-decoration: none;
+        color:#cecece;
+        padding:20px 15px;
+        border:2px solid black;
+     
+     }
+     #tabs>ul>li>a:hover{color:black;}
+     #tabs>div{
+        display:none;
+        padding: 15px;
+        background:#eaeaea;
+     }
+     #tabs>div:first-of-type{
+        display:block;
+        background: #eaeaea;
+        
+
+     }
+     p{
+        line-height: 1.9em;
+        margin-bottom: 1.5em;
+     }
+     img{
+        width: 300px;
+        justify-content: center;
+        padding:6px 35px;
+        background:#ccc;
+        border-radius: 5px 30px 15px;
+     }
+
+
+    </style>
+</head>
+<body>
+    <div id="tabs">
+        <ul>
+            <li><a href="#tab-1">NATURE LOVER</a></li>
+            <li><a href="#tab-2">ANIMAL LOVERS</a></li>
+            <li><a href="#tab-3">SPACE LOVER</a></li>
+        </ul>
+        <div id="tab-1">
+            <img src="https://res.cloudinary.com/dzwdee9wj/image/upload/v1679553568/dandelion-445228_960_720_zczx69.jpg">
+            <p>THE HUMAN WHO LOVES THE NATURE IS CALLED NATURE LOVER<br>THE MAIN RYTHM OF NATURE LOVER IS TO PROTECT THE NATURE FROM HARMFUL PERSONS</p>
+        </div>
+        <div id="tab-2">
+            <img src="https://res.cloudinary.com/dzwdee9wj/image/upload/v1679553817/large-psu360000086-animal-lover-original-imaegcse76fpmyj2_lmuktz.jpg" >
+            <p>THE MAN WHO LOVES ANYONE THAN ANIMALS CALLED ANIMAL LOVERS<br>THE MAIN SCHEME OF ANIMAL LOVERS ARE TO PROTECT ANIMALS FROM THE HUNTERS<br>
+            THE ANIMAL LOVERS ARE TWO TYPES<br>
+        <li>WILD ANIMAL LOVERS</li><li>DOMESTIC AMIMAL LOVERS</li></p>
+        </div>
+        <div id="tab-3">
+            <img src="https://res.cloudinary.com/dzwdee9wj/image/upload/v1679553896/qu08rqow6iesptmyb8xa.jpg">
+            <p>THE PERSON WHO LOVES THE AND DREAN ABOUT THE SPACE AND ITS STRUCTURE IS CALLED SPACE LOVER<br>
+            THE MAIN DERAM OF SPACE LOVER IS TO TRAVEL AT ON THE SPACE AND EXPLORE TO FIND A NEEW THING<br>
+        AND HE WABTS TO FULFILL ABOUT HIS DREAM TO GAON SUPER-NATURAL POWERS AT SPACE THAT NO ONE HAVE IN SURFACE OF THE EARTH</p>
+        </div>
+    </div>
+    <script src="jquery-3.6.3.min.js"></script>
+    <script>
+        
+        $('#tabs>ul>li>a').click(function(){
+            $('#tabs>ul>li>a').css({background:'white',color:'black'});
+            $(this).css({color:'white',background:'black'});
+            const tt=$(this).attr('href');
+           // alert(tt);
+           $('#tabs>div:visible').fadeOut(200,function(){
+            $(tt).fadeIn(200);
+           });
+        });
+    </script>
+</body>
+</html>
